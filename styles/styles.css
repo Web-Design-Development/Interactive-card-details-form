@@ -1,0 +1,363 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Screen Common Properties */
+.card-logo {
+    margin: 0;
+    padding: 0;
+}
+
+.circle {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #fff;
+
+}
+
+.big-circle {
+    height: 2.1rem;
+    width: 2.1rem;
+}
+
+.small-circle {
+    height: .8rem;
+    width: .8rem;
+    color: transparent;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.name-date-display {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    color: hsl(270, 3%, 87%);
+    text-transform: uppercase;
+
+}
+
+form {
+    text-align: left;
+}
+
+input {
+    margin-bottom: 1.5rem;
+    height: 2.6rem;
+    border-width: .5px;
+    border-radius: 4px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.number-input {
+    margin-bottom: 1.5rem;
+}
+
+#card-number {
+    margin-bottom: 0;
+
+}
+
+.input-valid {
+    outline: 2px solid;
+    outline-color: hsl(249, 99%, 64%);
+}
+
+.input-invalid {
+    outline: 2px solid;
+    outline-color: hsl(0, 100%, 66%);
+}
+
+.err {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.error-message {
+    color: hsl(0, 100%, 66%);
+    display: none;
+}
+
+.date-cvc-input {
+    margin-bottom: 1.5rem;
+}
+
+.date-input,
+.cvc-input {
+    display: inline-block;
+
+}
+
+#month,
+#year {
+    width: 4rem;
+    margin-right: .4rem;
+    margin-bottom: 0;
+}
+
+.active-state {
+    display: no;
+}
+
+.complete-state {
+    text-align: center;
+    display: none;
+}
+
+
+.complete-message {
+    color: hsl(279, 6%, 55%)
+}
+
+.submit {
+    background-color: hsl(278, 68%, 11%);
+    color: hsl(270, 3%, 87%);
+    font-size: 18px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .main-container {
+        position: relative;
+    }
+
+    /* Card Section */
+
+    .card-container {
+        background: url(../images/bg-main-mobile.png) no-repeat center/cover;
+        padding-top: 3rem;
+        height: 10.5rem;
+    }
+
+    .card-front,
+    .card-back {
+        color: white;
+    }
+
+    .card-front {
+        margin-top: -1rem;
+    }
+
+    #card-front,
+    #card-back {
+        width: 15rem;
+    }
+
+    #card-front {
+        margin-right: 4rem;
+    }
+
+    #card-back {
+        margin-left: 4rem;
+    }
+
+    .cvc-number-display {
+        margin-top: -5rem;
+        margin-left: 14rem;
+        color: hsl(270, 3%, 87%);
+    }
+
+    .circle {
+        position: relative;
+        right: 6.6rem;
+
+    }
+
+    .big-circle {
+        bottom: 8rem;
+    }
+
+    .small-circle {
+        bottom: 7.4rem;
+    }
+
+    .card-number-display {
+        position: relative;
+        bottom: 6rem;
+        margin: 0;
+        margin-right: 4rem;
+        color: hsl(270, 3%, 87%);
+        font-size: 1.125rem;
+
+    }
+
+    .name-date-display {
+        width: 12rem;
+        position: relative;
+        bottom: 6.5rem;
+        right: 2rem;
+    }
+
+    /* Input Section */
+    .input-container {
+        padding: 5rem 1rem 0;
+        color: hsl(278, 68%, 11%);
+    }
+
+
+    #cvc {
+        width: 45vw;
+        margin-bottom: 0;
+    }
+
+}
+
+
+@media only screen and (min-width: 601px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-auto-rows: 100vh;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    .card-container {
+        background: url(../images/bg-main-desktop.png) no-repeat center/cover;
+        text-align: center;
+        padding-top: 12rem;
+        margin: 0;
+        color: hsl(270, 3%, 87%);
+    }
+
+    #card-back,
+    #card-front {
+        width: 22rem;
+    }
+
+    .card-back,
+    .card-front {
+        position: relative;
+
+    }
+
+    .card-front {
+        margin-right: -18rem;
+        bottom: 14rem;
+
+    }
+
+    .card-back {
+        margin-right: -25rem;
+        top: 15rem;
+
+    }
+
+    .circle {
+        position: relative;
+        right: 7.5rem;
+
+    }
+
+    .big-circle {
+        bottom: 11rem;
+    }
+
+    .small-circle {
+        bottom: 10.4rem;
+    }
+
+
+    .card-number-display,
+    .name-date-display {
+        width: 16.8rem;
+    }
+
+    .card-number-display {
+        margin: auto;
+        margin-top: -8rem;
+        font-size: 1.5rem;
+    }
+
+
+
+    .cvc-number-display {
+        position: relative;
+        bottom: 8rem;
+        left: 7rem;
+        color: hsl(0, 0%, 100%);
+
+    }
+
+    /* Input Section */
+    .input-container {
+        width: 20rem;
+        padding-top: 15rem;
+        margin-left: 25rem;
+        color: hsl(278, 68%, 11%);
+    }
+
+    #cvc {
+        width: 9.7rem;
+        margin-bottom: 0;
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

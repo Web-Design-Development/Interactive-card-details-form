@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+  <!-- Card Image Section -->
+  <div class="main-container">
+    <div class="card-container">
+      <div class="card-back">
+        <img id="card-back" src="images/bg-card-back.png" alt="">
+        <p class="cvc-number-display">000</p>
+      </div>
+      <div class="card-front">
+        <img id="card-front" src="images/bg-card-front.png" alt="">
+        <div class="card-logo">
+          <div class="circle big-circle">.</div>
+          <div class="circle small-circle">.</div>
+        </div>
+        <div id="card-number-container">
+          <p class="card-number-display">0000 0000 0000 0000</p>
+        </div>
+        <div class="name-date-display">
+          <p class="name-display">Jane Appleseed</p>
+          <p class="date-display">00/00</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  Card Input Section -->
+
+    <div class="input-container">
+      <form class="card-form" action="">
+        <!-- active state -->
+        <div class="active-state">
+          <div class="name-number-input">
+            <div class="name-input">
+              <label for="name">Cardholder Name</label><br>
+              <input type="text" name="name" id="card-name" placeholder="e.g. Jane Appleseed">
+            </div>
+            <div class="number-input">
+              <label for="card-number">Card Number</label><br>
+              <input type="tel" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+              <small class="error-message number"></small>
+            </div>
+          </div>
+
+          <!-- Expiry date and cvc -->
+
+          <div class="date-cvc-input">
+            <div class="date-input">
+              <label for="date">Exp. Date (MM/YY)</label><br>
+              <input type="tel" name="month" id="month" placeholder="MM">
+              <input type="tel" name="year" id="year" placeholder="YY"><br>
+            </div>
+            <div class="cvc-input">
+              <label for="cvc">CVC</label><br>
+              <input type="text" name="cvc" id="cvc" placeholder="e.g. 123"><br>
+            </div>
+            <div class="err">
+              <small class="error-message date"></small>
+              <small class="error-message cvc"></small>
+            </div>
+          </div>
+
+          <input class="submit" type="submit" value="Confirm">
+        </div>
+
+
+        <!-- Completed state start -->
+
+        <div class="complete-state">
+          <img src="images/icon-complete.svg" alt="">
+          <h1>Thank you!</h1>
+          <p class="complete-message"> We've added your card details</p>
+          <input class="submit" type="submit" value="Continue">
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
