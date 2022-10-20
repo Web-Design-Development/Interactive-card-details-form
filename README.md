@@ -1,4 +1,4 @@
-# Friendly Challenge - interactive-card-details-form
+# Front-end Mentor - interactive-card-details-form
 <h1>Friendly Challenge<h1>
 
 ### Contents
