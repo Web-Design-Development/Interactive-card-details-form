@@ -39,7 +39,7 @@ form.addEventListener('keydown', (e) => {
 
         //card number input
         else if (e.target === cardNumInput) {
-            e.target.value = e.target.value.replace(/(\d{4})(\d+)/g, '$1 $2').slice(0, 19);
+            e.target.value = e.target.value.replace(/(\d{4})(\d+)/g, '$1 $2');
             cardNumber.textContent = cardNumInput.value;
             let errorMsg = document.querySelector('.number');
             if (cardNumInput.value.length < 18) {
@@ -61,7 +61,7 @@ form.addEventListener('keydown', (e) => {
 
         // expiry date input
         else if (e.target === expMonthInput || e.target === expYearInput) {
-            e.target.value = e.target.value.slice(0, 2)
+            e.target.value = e.target.value
             const month = expMonthInput.value;
             const year = expYearInput.value;
             expiryDate.textContent = `${month}/${year}`;
@@ -91,7 +91,7 @@ form.addEventListener('keydown', (e) => {
 
         //CVC input
         else if (e.target === cvcInput) {
-            e.target.value = e.target.value.slice(0, 3)
+            e.target.value = e.target.value
             cvcNumber.textContent = cvcInput.value;
             let errorMsg = document.querySelector('.cvc');
             if (cvcInput.value.match(/[a-zA-Z]/)) {
