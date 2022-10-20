@@ -116,10 +116,12 @@ input {
     color: hsl(279, 6%, 55%)
 }
 
-.submit {
+.continue-button,
+.confirm-button {
     background-color: hsl(278, 68%, 11%);
     color: hsl(270, 3%, 87%);
     font-size: 18px;
+    cursor: pointer;
 }
 
 
@@ -291,7 +293,7 @@ input {
     /* Input Section */
     .input-container {
         width: 20rem;
-        padding-top: 15rem;
+        padding-top: 16rem;
         margin-left: 25rem;
         color: hsl(278, 68%, 11%);
     }
@@ -308,48 +310,6 @@ input {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

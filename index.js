@@ -7,8 +7,8 @@ let cardNumInput = document.querySelector('#card-number')
 let expMonthInput = document.querySelector('#month');
 let expYearInput = document.querySelector('#year');
 let cvcInput = document.querySelector('#cvc');
-let submitButton = document.querySelectorAll('.submit')[0]
-let continueButton = document.querySelectorAll('.submit')[1]
+let confirmButton = document.querySelector('.confirm-button')
+let continueButton = document.querySelector('.continue-button')
 let completeSect = document.querySelector('.complete-state');
 let activeSect = document.querySelector('.active-state')
 let form = document.querySelector('.card-form')
@@ -21,8 +21,10 @@ let monthCheck;
 let yearCheck;
 let cvcCheck;
 
-// add event listener to card input tags and format patterns.
-form.addEventListener('keydown', (e) => {
+
+
+// add event listener to card inputs and format their patterns.
+form.addEventListener('input', (e) => {
     if (e.target === document.activeElement) {
 
         //name input
@@ -30,19 +32,18 @@ form.addEventListener('keydown', (e) => {
             cardName.textContent = nameInput.value;
             if (nameInput.value.includes(' ') && nameInput.value.length > 5) {
                 nameInput.classList.add('input-valid')
+                nameCheck = true;
             } else {
-                nameInput.classList.remove('input-valid')
-                nameCheck = true
-
+                nameInput.classList.remove('input-valid');
             }
         }
 
         //card number input
         else if (e.target === cardNumInput) {
-            e.target.value = e.target.value.replace(/(\d{4})(\d+)/g, '$1 $2');
+            e.target.value = e.target.value.replace(/(\d{4})(\d+)/g, '$1 $2').slice(0, 19);
             cardNumber.textContent = cardNumInput.value;
             let errorMsg = document.querySelector('.number');
-            if (cardNumInput.value.length < 18) {
+            if (cardNumInput.value.length < 19) {
                 cardNumInput.classList.add('input-invalid')
                 errorMsg.style.display = 'contents';
                 errorMsg.innerHTML = 'Complete card number';
@@ -61,7 +62,7 @@ form.addEventListener('keydown', (e) => {
 
         // expiry date input
         else if (e.target === expMonthInput || e.target === expYearInput) {
-            e.target.value = e.target.value
+            e.target.value = e.target.value.slice(0, 2)
             const month = expMonthInput.value;
             const year = expYearInput.value;
             expiryDate.textContent = `${month}/${year}`;
@@ -73,7 +74,7 @@ form.addEventListener('keydown', (e) => {
                 errorMsg.innerHTML = 'digits only'
 
             }
-            else if (month > 12) {
+            if (month > 12) {
                 expMonthInput.classList.add('input-invalid')
                 errorMsg.style.display = 'contents';
                 errorMsg.innerHTML = "12 months only"
@@ -91,7 +92,7 @@ form.addEventListener('keydown', (e) => {
 
         //CVC input
         else if (e.target === cvcInput) {
-            e.target.value = e.target.value
+            e.target.value = e.target.value.slice(0, 3)
             cvcNumber.textContent = cvcInput.value;
             let errorMsg = document.querySelector('.cvc');
             if (cvcInput.value.match(/[a-zA-Z]/)) {
@@ -122,13 +123,19 @@ form.addEventListener('keydown', (e) => {
 
 })
 
-
-submitButton.addEventListener('click', (e) => {
+//submit button and form valdattion
+confirmButton.addEventListener('click', (e) => {
     e.preventDefault()
     if (nameCheck && numCheck && monthCheck && yearCheck && cvcCheck) {
         activeSect.style.display = 'none'
         completeSect.style.display = 'block'
-    } else {
-        return
     }
 })
+
+//continue button to reload page.
+continueButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.location.reload(true);
+})
+
+
