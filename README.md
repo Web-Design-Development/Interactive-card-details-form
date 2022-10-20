@@ -13,6 +13,10 @@
   This is the solution to a Front-end Mentor challenge aimed at testing and developing ones coding skills.<br>
   It is titled <a href='https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw'>Interactive card details form</a><br>
   
+  ## Screenshots
+  <img src="images/deskactive.png" alt="screenshot">
+  <img src="images/completemobile.jpeg" alt="screenshot">
+  
   
   ## Language
   - Semantic HTML5
@@ -26,3 +30,4 @@
   - validate correctly filled fields
   - Displays complete state when confirmed, in the absence of any error
   - Reloads site when continue is clicked
+  - mobile and desktop responsive
